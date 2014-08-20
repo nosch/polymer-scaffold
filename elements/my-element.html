@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="my-element">
+    <template>
+        <style>
+            :host {
+                padding: 10px;
+            }
+            .element-header ::content h2 {
+                margin: 0;
+                font-size: 28px;
+                font-weight: 300;
+                font-family: RobotoDraft, sans-serif;
+                text-decoration: underline;
+            }
+        </style>
+
+        <div class="element-header">
+            <content select="h2"></content>
+        </div>
+    </template>
+    <script>
+        Polymer('my-element', {});
+    </script>
+</polymer-element>
