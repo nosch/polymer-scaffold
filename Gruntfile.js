@@ -15,7 +15,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         // Project paths
         scaffold: {
-            buildDir: 'build/'
+            buildDir: 'build/',
+            bowerDir: 'src/bower_components/',
+            sourceDir: 'src/'
         },
 
         mkdir: {
@@ -26,13 +28,47 @@ module.exports = function (grunt) {
             }
         },
 
+        copy: {
+            default: {
+                cwd: '<%= scaffold.sourceDir %>',
+                src: ['**/*'],
+                dest: '<%= scaffold.buildDir %>',
+                expand: true
+            }
+        },
+
         // Vulcanize configuration
         vulcanize: {
             default: {
                 options: {},
                 files: {
-                    'build/index.html': 'src/index.html'
+                    '<%= scaffold.buildDir %>/index.html': '<%= scaffold.buildDir %>/index.html'
                 }
+            }
+        },
+
+        // Connect server configuration
+        connect: {
+            default: {
+                options: {
+                    hostname: 'localhost',
+                    port: 3333,
+                    base: '<%= scaffold.buildDir %>',
+                    open: true
+                }
+            }
+        },
+
+        watch: {
+            default: {
+                files: [
+                    '<%= scaffold.sourceDir %>index.html',
+                    '<%= scaffold.sourceDir %>elements/**/*',
+                    'Gruntfile.js'
+                ],
+                tasks: [
+                    'build'
+                ]
             }
         }
     });
@@ -42,6 +78,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'mkdir:build',
-        'vulcanize'
+        'copy:default',
+        'vulcanize:default'
+    ]);
+
+    grunt.registerTask('server', [
+        'build',
+        'connect:default',
+        'watch:default'
     ]);
 };

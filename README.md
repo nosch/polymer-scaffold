@@ -17,9 +17,8 @@ A very simple scaffold for Polymer projects.
     
 ## How to use?
 
-Develop your custom HTML elements inside src/ and "vulcanize" your work with
-
-    $ grunt build
+Develop your custom HTML elements inside src/. "Vulcanize" your work and start a local web server with grunt:
     
-This grunt tasks will create a folder named build/ including the "vulcanized" index.html.
+    $ grunt build
+    $ grunt server
 

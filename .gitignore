@@ -3,6 +3,6 @@
 .log
 
 .idea
-node_modules
-bower_components
 build
+node_modules
+src/bower_components
