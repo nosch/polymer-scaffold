@@ -1,0 +1,10 @@
+:host {
+    padding: 10px;
+}
+.element-header ::content h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 300;
+    font-family: RobotoDraft, sans-serif;
+    text-decoration: underline;
+}
