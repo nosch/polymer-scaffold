@@ -11,7 +11,7 @@ A very simple scaffold for Polymer projects.
 
 ## How to install?
     
-1. $ git clone git@bitbucket.org:nosch/polymer-scaffold.git "my-polymer-project"   
+1. $ git clone git@github.com:nosch/polymer-scaffold.git "my-polymer-project"   
 2. $ cd my-polymer-project
 3. $ npm install
     
