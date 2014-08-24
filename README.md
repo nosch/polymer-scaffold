@@ -10,4 +10,4 @@ Very simple scaffold for Polymer projects.
     
     $ cd my-polymer-project
 
-    $ bower install
+    $ npm install
