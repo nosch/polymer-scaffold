@@ -31,7 +31,7 @@ module.exports = function (grunt) {
             default: {
                 options: {},
                 files: {
-                    'build/index.html': 'index.html'
+                    'build/index.html': 'src/index.html'
                 }
             }
         }
